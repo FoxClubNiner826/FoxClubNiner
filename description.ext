@@ -1,0 +1,168 @@
+respawnOnStart = 0;
+allowProfileGlasses = 0;
+
+class CfgSounds
+{
+	class intro1
+	{
+		name = "intro1"; // Name for custom sound 1
+		sound[] = {\sound\intro1.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class intro2
+	{
+		name = "intro2"; // Name for custom sound 1
+		sound[] = {\sound\intro2.ogg, 99, 1.0};
+                titles[] = {0, "Cpt. Marcinko: What's on your mind, P.O."};
+	};
+	class MP1_1
+	{
+		name = "MP1_1"; // Name for custom sound 1
+		sound[] = {\sound\MP1_1.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP1_2
+	{
+		name = "MP1_2"; // Name for custom sound 1
+		sound[] = {\sound\MP1_2.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP1_3
+	{
+		name = "MP1_3"; // Name for custom sound 1
+		sound[] = {\sound\MP1_3.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP1_4
+	{
+		name = "MP1_4"; // Name for custom sound 1
+		sound[] = {\sound\MP1_4.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP2_1
+	{
+		name = "MP2_1"; // Name for custom sound 1
+		sound[] = {\sound\MP2_1.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP2_2
+	{
+		name = "MP2_2"; // Name for custom sound 1
+		sound[] = {\sound\MP2_2.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP2_3
+	{
+		name = "MP2_3"; // Name for custom sound 1
+		sound[] = {\sound\MP2_3.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class MP2_4
+	{
+		name = "MP2_4"; // Name for custom sound 1
+		sound[] = {\sound\MP2_4.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class question1
+	{
+		name = "question1"; // Name for custom sound 1
+		sound[] = {\sound\question1.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class question2
+	{
+		name = "question2"; // Name for custom sound 1
+		sound[] = {\sound\question2.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class question3
+	{
+		name = "question3"; // Name for custom sound 1
+		sound[] = {\sound\question3.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class question4
+	{
+		name = "question4"; // Name for custom sound 1
+		sound[] = {\sound\question4.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class answer1
+	{
+		name = "answer1"; // Name for custom sound 1
+		sound[] = {\sound\answer1.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class answer2
+	{
+		name = "answer2"; // Name for custom sound 1
+		sound[] = {\sound\answer2.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class answer3
+	{
+		name = "answer3"; // Name for custom sound 1
+		sound[] = {\sound\answer3.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class answer4
+	{
+		name = "answer4"; // Name for custom sound 1
+		sound[] = {\sound\answer4.ogg, 99, 1.0};
+                titles[] = {0, ""};
+	};
+	class timebomb
+	{
+		name = "timebomb"; // Name for custom sound 1
+		sound[] = {\sound\timebomb.ogg, 6, 1.0};
+                titles[] = {0, ""};
+	};
+	class wait1
+	{
+		name = "wait1"; // Name for custom sound 1
+		sound[] = {\sound\wait1.ogg, 6, 1.0};
+                titles[] = {0, ""};
+	};
+	class wait2	
+	{
+		name = "wait2"; // Name for custom sound 2
+		sound[] = {\sound\wait2.ogg, 5, 1.0};
+                titles[] = {0, ""};
+	};
+        class infill1
+	{
+		name = "infill1"; // Name for custom sound 1
+		sound[] = {\sound\infill1.ogg, 6, 1.0};
+                titles[] = {0, ""};
+	};
+	class infill2	
+	{
+		name = "infill2"; // Name for custom sound 2
+		sound[] = {\sound\infill2.ogg, 5, 1.0};
+                titles[] = {0, ""};
+	};
+        class hvt1
+	{
+		name = "hvt1"; // Name for custom sound 1
+		sound[] = {\sound\hvt1.ogg, .25, 1.0};
+                titles[] = {0, ""};
+	};
+	class hvt2	
+	{
+		name = "hvt2"; // Name for custom sound 2
+		sound[] = {\sound\hvt2.ogg, 5, 1.0};
+                titles[] = {0, ""};
+	};
+        class pilot1
+	{
+		name = "pilot1"; // Name for custom sound 1
+		sound[] = {\sound\pilot1.ogg, 50, 1.0};
+                titles[] = {0, "Holy shit! I almost shot you! What the fuck are you doing here? Where the fuck are we?"};
+	};
+	class pilot2	
+	{
+		name = "pilot2"; // Name for custom sound 2
+		sound[] = {\sound\pilot2.ogg, 12, 1.0};
+                titles[] = {0, "Bumfuck Cambodia, you're along way from home Dorothy, and one lucky bastard we happened to see you go down. Look sharp and follow me."};
+	};
+};	

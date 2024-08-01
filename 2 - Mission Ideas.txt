@@ -1,0 +1,70 @@
+
+High Priority:
+- purple smoke pops but doesn't plume
+- add mission steam main pic (can be any size but must be square. set 1440x1440 in gimp. use square overlay in splendid camera.)
+- two more screen shots. approching village and sinlge file jumngle walk space 10 meters apart.
+- rain didnt stop (retest)
+- Add npc banter with voice acting
+- and nps with lip sync for beginnig part
+
+POW section
+- cycle patrols for opfor, for replayability
+- players enter the area. They are alerted to the pow presence with say3d audio.
+- conversation
+     - pow help us! untie us!
+     - player response, Can you walk? there is a field telephone on the desk in the corner. I will call you on it from the surface when it is safe to get out. Wait here until I do. I need to make sure it's safe
+- save POW task created
+- players clear the tunnel and exit
+- player use field telephone to contact POW
+- conversation
+     - hello?
+     - it's safe to come up now
+     - we are on the way
+- POW walk with waypoints to the tunnel entrance when they get there a trigger teleports them to the surface
+- once on the surface the POW join the players squad
+
+Pilot section
+- pilot lands and wanders in a small area or stays put
+- players get in a certain distance: pilot faces the players, waves then conversation 
+- conversation ends then pilot is added to player squad
+
+Exvac Section
+- players get to the evacuation spot
+- call for extraction
+- conversation
+     - player: we need air support over
+     - pilot: inbound:  one mike
+- when players hear the helicopter, create task pop smoke
+- players create task
+- player throw smoke task succeeded
+- conversation when within certain distance
+     - player: we have poped smoke on our position.
+     - pilot: I see x,y,z smoke, do you confirm? (maybe if statement to play the correct audio file)
+     - player: affirmative 
+- pilot lands
+
+Medium Priority:
+- end mission if everyone dies
+
+Low Priority:
+- have npc walk to end of pier and salute as boat drives away.
+- add explosion effect for demo of cache
+- ambient voices work? you need to do more testings. SOG AI does what you want or you can use his script
+- Add a video briefing or AAR
+- In game cutscene intro with SOG module
+- helicopters dont really shoot blufor. try the 'reveal' tequnique
+- one of the pows not switching to bluefor
+- modify support radio module to just be transport, no cas
+- add autosaves for SP
+
+Long Term Priority:
+Randomized escape route for general. Currently random module incompatible with deleting cycle waypoints
+
+
+Before you publish to workshop do this:
+- Change weather and time to starting point 00.15.00
+- Uncheck take damage
+
+Mission Notes:
+If you can't get the smoke grenade thing to work out you could create civilian present trigger to tell player when to throw the smoke on the ground. The heli will land anyway but it gets around the infi smoke hurdle. You could event have an event failed with a radio message saying hey throw a fucking smoke next time!
+
