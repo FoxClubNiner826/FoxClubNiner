@@ -35,25 +35,26 @@ override_vn_sam_masteraudioarray = compile preprocessFileLineNumbers "override_v
 [] call VN_fnc_QOL_earplugs;
 
 // removes addaction from dead bodies. this makes sure there are no duplicate addactions on players too
-	player addEventHandler ["Killed", {
+player addEventHandler ["Killed", {
     removeAllActions (_this select 0); //not removing detonate addaction. maybe cause its nested in hold action? intermittant
 	removeAllActions weaponcache;
 	removeAllActions foodcache;
 }];
 
 
-myBuilding = ((nearestObjects [getpos chair1,["Land_vn_hut_02"],20])#0),
-myBuilding2 = ((nearestObjects [getpos hut_table2,["Land_vn_hut_07"],20])#0),
-myBuilding3 = ((nearestObjects [getpos hut3_wire1,["Land_vn_hut_06"],20])#0),
-myBuildgunboat1 = ((nearestObjects [getpos gunboat_file,["Land_vn_hut_02"],20])#0),
-myBuildgunboat2 = ((nearestObjects [getpos gunboat_file,["Land_vn_hut_01"],20])#0),
-myBuildgunboat3 = ((nearestObjects [getpos gunboat_file,["Land_vn_hut_07"],20])#0),
-myBuildcache1 = ((nearestObjects [getpos photo,["Land_vn_hut_02"],20])#0),
-myBuildcache2 = ((nearestObjects [getpos photo,["Land_vn_hut_02"],20])#0),
-myBuildcache2 = ((nearestObjects [getpos photo,["Land_vn_hut_01"],20])#0),
-myBuildsam1 = ((nearestObjects [getpos samsite_file,["Land_vn_hut_07"],20])#0),
-myBuildsam2 = ((nearestObjects [getpos samsite_file,["Land_vn_c_prop_car_01"],20])#0),
-myBuildsam3 = ((nearestObjects [getpos samsite_file,["Land_vn_hut_07"],20])#0),;
+myBuilding = ((nearestObjects [getpos chair1,["Land_vn_hut_02"],20])#0);
+myBuilding2 = ((nearestObjects [getpos hut_table2,["Land_vn_hut_07"],20])#0);
+myBuilding3 = ((nearestObjects [getpos hut3_wire1,["Land_vn_hut_06"],20])#0);
+myBuildgunboat1 = ((nearestObjects [getpos gunboat_file,["Land_vn_hut_02"],20])#0);
+myBuildgunboat2 = ((nearestObjects [getpos gunboat_file,["Land_vn_hut_01"],20])#0);
+myBuildgunboat3 = ((nearestObjects [getpos gunboat_file,["Land_vn_hut_07"],20])#0);
+myBuildcache1 = ((nearestObjects [getpos photo,["Land_vn_hut_02"],20])#0);
+myBuildcache2 = ((nearestObjects [getpos photo,["Land_vn_hut_02"],20])#0);
+myBuildcache2 = ((nearestObjects [getpos photo,["Land_vn_hut_01"],20])#0);
+myBuildsam1 = ((nearestObjects [getpos samsite_file,["Land_vn_hut_07"],20])#0);
+myBuildsam2 = ((nearestObjects [getpos samsite_file,["Land_vn_c_prop_car_01"],20])#0);
+myBuildsam3 = ((nearestObjects [getpos samsite_file,["Land_vn_hut_07"],20])#0);
+
 addMissionEventHandler ["BuildingChanged", {
     params ["_from", "_to", "_isRuin"];
     if (_from isEqualTo myBuilding) then
