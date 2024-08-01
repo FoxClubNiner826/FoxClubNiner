@@ -69,3 +69,4 @@ enable damage for command and scout unit
 move pics and sound files back
 
 
+Hello There!
