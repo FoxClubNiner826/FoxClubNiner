@@ -27,7 +27,8 @@
 player addAction [
     "<t color='#FFFF00'>Radio for Extraction</t>", 
     { 
-    missionNamespace setVariable ["ExtractAction", false, true];
+	{[_x,"ALL"] remoteExec ["disableAI",0,true];} forEach crew samlauncher;
+	missionNamespace setVariable ["ExtractAction", false, true];
     missionNamespace setVariable ["ChopperLZ", true, true];
     missionNamespace setVariable ["RTBAction", true, true];
 	[player, "Rankin, Covey. Requesting exfil. Over."] remoteExec ["sideChat"];
@@ -128,22 +129,3 @@ if (!isNil "foodcache") then {
 	false //show in middle of screen
 ] call BIS_fnc_holdActionAdd;
 };
-
-player addAction [
-    "<t color='#FFFF00'>Talk to Downed Pilot</t>", 
-    { 
-    missionNamespace setVariable ["ExtractAction", false, true];
-    missionNamespace setVariable ["ChopperLZ", true, true];
-    missionNamespace setVariable ["RTBAction", true, true];
-	[player, "Rankin, Covey. Requesting exfil. Over."] remoteExec ["sideChat"];
-	sleep 5;
-	[covey, "Covey, Rankin. Air inbound one mike, over."] remoteExec ["sideChat"];
-    }, 
-    nil, 
-    8, 
-    false, 
-    true, 
-    "", 
-    "ExtractAction"
-];
-

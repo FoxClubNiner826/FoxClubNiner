@@ -14,3 +14,13 @@ ActionEndMission = false;
 
 missionNamespace setVariable ["ActionDebrief", false, true];
 
+[] spawn {
+    private _offset = [(sin(random 360) * random 100), (cos(random 360) * random 100), 0];
+    while {true} do {
+        "PilotArea" setMarkerPos (getPos pilot vectorAdd _offset);
+        "RescuePilotText" setMarkerPos (markerPos "PilotArea");
+        sleep 1;
+    };
+};
+
+

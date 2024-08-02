@@ -31,7 +31,7 @@ override_vn_sam_masteraudioarray = compile preprocessFileLineNumbers "override_v
 //[] call VN_fnc_QOL_earplugs;
 
 //enableRadio false; //try these later
-//enableSentences false;﻿
+//enableSentences false; 
 [] call VN_fnc_QOL_earplugs;
 
 // removes addaction from dead bodies. this makes sure there are no duplicate addactions on players too
@@ -148,16 +148,4 @@ addMissionEventHandler ["BuildingChanged", {
     };
 }];
 
-// Get the pilot object
-_pilot = objNull; // Default to objNull in case the object is not found
-
-// Ensure you have the correct reference to the object
-// For example, if the object is named "pilot" and you want to find it by name
-_pilot = missionNamespace getVariable "pilot"; // Use the appropriate method to get the object
-
-// Check if the object was found before executing the script
-if (!isNull _pilot) then {
-    // Start the animation script
-    [_pilot] execVM "scripts\animatePilot.sqf";
-};
 

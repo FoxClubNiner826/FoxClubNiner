@@ -4,13 +4,11 @@ TO DO UP NEXT:
 go through IPL and move any addactions that need to be in OPR
 
 TO DO AT SOME POINT:
+BIS_fnc_ambientAnimCombat and another function that does idle stuff in start area.
 how to set server distance view
 add questions for lt rankin at beginning
 update briefing pics
 add AAR for lt. rankin (just need to record lines)
-
-TO DO SIDE QUEST:
-randomized marker for pilot
 
 BUGS:
 - Fog never clearing up because forgot to script it that way.
@@ -59,6 +57,7 @@ FINISHED:
 - added hold action for wait for patrol and scuba tasks.
 - touched up side missions
 - POW task should be good. all tested except helicopter and exfil
+- rescue pilot task should be good. needs testing and esp at extract
 
 TO EXPORT FOR PLAY (not testing):
 Change time to night

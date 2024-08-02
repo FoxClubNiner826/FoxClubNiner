@@ -196,7 +196,7 @@ scubaEquipped = false;
 	false //show in middle of screen
 ] call BIS_fnc_holdActionAdd;
 
-// equip time bombs
+// equip time bombs. not using hold action for now cause of bug on multiple ones not showing icon. gencoder may have a fix try at last resort
 //["scripts\bombs.sqf"] remoteExec ["execVM", 0, true]; // in trigger area on infil.
 //ptboat addAction ["<t color='#FFFF00'>Place Timed Explosive: 15 Minutes</t>", {timebomb = false; publicVariable "timebomb"; ["scripts\bomb.sqf"] remoteExec ["execVM", 0];}, nil, 8, false, true, "", "isNil 'timebomb'", 5.5];
 /*
