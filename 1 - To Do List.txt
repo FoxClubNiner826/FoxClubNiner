@@ -1,24 +1,27 @@
 PRIORITY: FINISH THE MAIN QUEST!
-make sound file smaller and try it that way. will have to adjust time in sqfs
+- make sound file smaller and try it that way. will have to adjust time in sqfs
 
 TO DO UP NEXT:
-briefing triggers need some work since they fire 2 AARs at the same time
-if you throw a smoke before lz task pops up then it wont complete and no inf smoke
-using get in from within the heli causes it to hover
-end mission page to tell players why they died or succeded
-mission fail for leaving a player behind
-what to do with pilot or hostage on base return. currently they stay in chopper
+- briefing triggers need some work since they fire 2 AARs at the same time
+- if you throw a smoke before lz task pops up then it wont complete and no inf smoke
+- using get in from within the heli causes it to hover
+- end mission page to tell players why they died or succeded
+- mission fail for leaving a player behind (place a trigger area for the helicopter with condtion !triggeractivated mission complete. since that trigger 
+didnt fire the only reason is someone wasnt in the helicopter) you could end the mission right there or just set task task to fail. in which case you need 
+to adjust pri obj pass annd fail condtion.
+- what to do with pilot or hostage on base return. currently they stay in chopper
 
 TO DO AT SOME POINT:
 - have npc walk to end of pier and salute as boat drives away.
-randomize cloud cover at mission start
-convert lumphat files to hold actions
-disable the radio after testing because it does help during that.
-BIS_fnc_ambientAnimCombat and another function that does idle stuff in start area.
-how to set server distance view
-record voice actors
-update briefing pics
-write complete script
+- randomize cloud cover at mission start
+- convert lumphat files to hold actions
+- disable the radio after testing because it does help during that.
+- BIS_fnc_ambientAnimCombat and another function that does idle stuff in start area.
+- how to set server distance view
+- record voice actors
+- update briefing pics
+- write complete script
+- have exfil pilots go somewhere after exit
 
 BUGS:
 - Fog never clearing up because forgot to script it that way.
@@ -45,12 +48,12 @@ read description.ext on wiki to polish load screens, etc
 - add autosaves for SP
 
 TO EXPORT FOR PLAY (not testing):
-Change time to night
-adjust respawn settings (on custom position and choose the spawn 60secs1)
-enable intro in init.sqf
-make sure player groups call sign is seal team one and all at the start area
-enable damage for command and scout unit
-move pics and sound files back
+- Change time to night
+- adjust respawn settings (on custom position and choose the spawn 60secs1)
+- enable intro in init.sqf
+- make sure player groups call sign is seal team one and all at the start area
+- enable damage for command and scout unit
+- move pics and sound files back
 
 FINISHED:
 -JIP intro type text
