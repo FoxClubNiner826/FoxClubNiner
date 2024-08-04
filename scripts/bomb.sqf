@@ -1,12 +1,12 @@
-ptboat say3D ["timebomb", 50]; //play tick tock
-sleep 40;
-ptboat say3D ["timebomb", 50]; //play tick tock
-sleep 40;
-ptboat say3D ["timebomb", 50]; //play tick tock
+if !(isServer) exitWith {};
 
-bombTimerStart = time;
-waituntil { sleep 1; (time - bombTimerStart) >= (60*15) };
-// Kaboom!
-//hint "Kaboom";
-"M_Mo_82mm_AT_LG" createVehicle (getPos ptboat);
+private _startTime = time;
+private _lastPlayTime = _startTime - 40;
+while { sleep 1; time <= _startTime + (60*13) } do {
+    if ((time - _lastPlayTime) >= 40) then {
+        [ptboat, ["timebomb", 50]] remoteExec ["say3d", 0];
+        _lastPlayTime = time;
+    };
+};
 
+"M_Mo_82mm_AT_LG" createVehicle (ASLToAGL getPosASL ptboat);

@@ -1,14 +1,24 @@
 PRIORITY: FINISH THE MAIN QUEST!
 
 TO DO UP NEXT:
-go through IPL and move any addactions that need to be in OPR
+briefing trigger need some work since they fire 2 at the same time
+if you throw a smoke before lz task pops up then it wont complete and no inf smoke
+using get in from within the heli causes it to hover
+make sound file smaller and try it that way. will have to adjust time in sqfs
+end mission page to tell players why they died.
+mission fail for leaving a player behind
+what to do with pilot or hostage on base return. currently they stay in chopper
 
 TO DO AT SOME POINT:
+randomize cloud cover at mission start
+convert lumphat files to hold actions
+disable the radio after testing because it does help during that.
 BIS_fnc_ambientAnimCombat and another function that does idle stuff in start area.
 how to set server distance view
 add questions for lt rankin at beginning
 update briefing pics
 add AAR for lt. rankin (just need to record lines)
+have a trigger check for group size and change helicopter to fit size
 
 BUGS:
 - Fog never clearing up because forgot to script it that way.
@@ -22,12 +32,13 @@ BUGS:
 - disable jukebox by looking at the module code in function viewer
 
 JIP ISSUES:
+- if a player leaves and he had an ai in his group then no one else can control the AI. The AI becomes invincible. maybe the enable damage reverts? I think
+so because this doesnt happen with the POW
 - player may not have access to their loadout from the stab if they have scuba equipped and leave and rejoin.
 - some combination of JIP players coming and going cause some tasks to cycle through when a player joins. Does not seem to affect the sync of the tasks though.
 - If a player leaves and his AI is killed its loadout reverts. Face still working tho.
 
 BEFORE PUBLISH:
-add a big enough extract helo for all players. maybe you can change the unit type by script based on how many players are in game.
 read description.ext on wiki to polish load screens, etc
 
 FINISHED:
@@ -58,6 +69,16 @@ FINISHED:
 - touched up side missions
 - POW task should be good. all tested except helicopter and exfil
 - rescue pilot task should be good. needs testing and esp at extract
+- adjusted naval wait triggers so that you can now fail after passing.
+- added fail mission trigger if stab is destroyed before reaching infil point
+- added exfil trigger that checks for players in the trigger area and alive and in the extract helicopter
+- added pilot trigger that checks for pilot back at base and completes task
+- added pow trigger that checks for pilot back at base and completes task
+- add side chat to pow heal. "its no use. My leg is ruined". in the future randomize 3 responses.
+- moved time bombs to IPL
+- adjusted skipwaypoint for troop reinforcements after general is killed.
+- updates file in lumphat so they dont clip thorugh objects.
+
 
 TO EXPORT FOR PLAY (not testing):
 Change time to night

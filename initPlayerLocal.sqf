@@ -196,6 +196,54 @@ scubaEquipped = false;
 	false //show in middle of screen
 ] call BIS_fnc_holdActionAdd;
 
+//Place time bombs on STAB
+ptboat addAction [
+    "<t color='#FFFF00'>Place C-4 Plastic Explosive: 15 Minutes</t>", 
+    {
+        missionNamespace setVariable ["ActionSTABTimeBombs", false, true];
+        ["scripts\bomb.sqf"] remoteExec ["execVM", 2];
+    }, 
+    nil, 
+    8, 
+    false, 
+    true, 
+    "", 
+    "ActionSTABTimeBombs",
+    5.5
+];
+
+//Place time bombs on STAB
+ptboat addAction [
+	"<t color='#FFFF00'>Place C-4 Plastic Explosive: 30 Minutes</t>", 
+	{
+	missionNamespace setVariable ["ActionSTABTimeBombs", false, true];
+	["scripts\bomb2.sqf"] remoteExec ["execVM", 0];
+	}, 
+	nil, 
+	8, 
+	false, 
+	true, 
+	"", 
+	"ActionSTABTimeBombs",
+	 5.5
+	 ]; 
+
+//Place time bombs on STAB
+ptboat addAction [
+	"<t color='#FFFF00'>Place C-4 Plastic Explosive: 45 Minutes</t>", 
+	{
+	missionNamespace setVariable ["ActionSTABTimeBombs", false, true];
+	["scripts\bomb3.sqf"] remoteExec ["execVM", 0];
+	}, 
+	nil, 
+	8, 
+	false, 
+	true, 
+	"", 
+	"ActionSTABTimeBombs",
+	 5.5
+	 ]; 
+
 // equip time bombs. not using hold action for now cause of bug on multiple ones not showing icon. gencoder may have a fix try at last resort
 //["scripts\bombs.sqf"] remoteExec ["execVM", 0, true]; // in trigger area on infil.
 //ptboat addAction ["<t color='#FFFF00'>Place Timed Explosive: 15 Minutes</t>", {timebomb = false; publicVariable "timebomb"; ["scripts\bomb.sqf"] remoteExec ["execVM", 0];}, nil, 8, false, true, "", "isNil 'timebomb'", 5.5];
@@ -246,32 +294,6 @@ scubaEquipped = false;
 	false //show in middle of screen
 ] call BIS_fnc_holdActionAdd;
 */
-
-// calls POW to surface
-player addAction [
-    "<t color='#FFFF00'>Call POW</t>", 
-    { 
-    missionNamespace setVariable ["ActionCallPOW", false, true];
-	[player, "Alright buddy. Come on up."] remoteExec ["sideChat"];
-	sleep 5;
-	[POW, "Be right there."] remoteExec ["sideChat"];
-	sleep 5;
-	POW setPosATL (getPosATL ExitSpot);
-	sleep 1;
-	[POW] join (group player);
-	sleep 1; //needed for setcaptive
-	POW setCaptive false;
-	POW enableai "PATH";
-	sleep 2;
-	[POW, "Lead the way boss."] remoteExec ["sideChat"];
-    }, 
-    nil, 
-    8, 
-    false, 
-    true, 
-    "", 
-    "_this distance fieldtelephone < 4 && ActionCallPOW"
-];
 
 // creates infinite smoke
 params ["_player", "_didJIP"];
@@ -363,22 +385,6 @@ if (isNil "SmokeThrown") then {
     }];
 };
 
-// confirm smoke convo
-player addAction [
-    "<t color='#FFFF00'>Confirm Smoke Color</t>", 
-    { 
-    missionNamespace setVariable ["ActionConfirmSmoke", false, true];
-	[player, "Rankin, Ranger. Affirmative, you are cleared for touchdown. Over."] remoteExec ["sideChat"];
-	sleep 5;
-	[Ranger, "Ranger, Rankin. Copy. Let's do this one quick-like. Over."] remoteExec ["sideChat"];
-    }, 
-    nil, 
-    8, 
-    false, 
-    true, 
-    "", 
-    "ActionConfirmSmoke"
-];
 /*
 // return heli to base addadction //_this in (crew _target) if you want people to use it without everyone having to be in the helicopter
 heli addAction [
@@ -433,7 +439,8 @@ player addAction [
 ];
 */
 
-//ends mission early hold action
+//ends mission early hold action - probably not going to use this now that I have an ending for the mission
+/*
 [
 	player,
 	"<t color='#FFFF00'>End Mission</t>",
@@ -454,6 +461,7 @@ player addAction [
 	false, //show if unconcious
 	true //show in middle of screen
 ] call BIS_fnc_holdActionAdd;
+*/
 
 // debrief conversation based on what triggers were activated
 Marcinko addAction [
@@ -463,7 +471,7 @@ Marcinko addAction [
 		params ["_target", "_caller", "_actionID", "_args"]; //makes the caller say the first line
 		//[_caller, ["debrief",100]] remoteExec ["say3D"]; //ready for debrief sir
 		//sleep 3; //wait for file to finish playing
-		if (triggerActivated generaldead && triggerActivated ptboatdead && triggerActivated TOO_cache_pass && triggerActivated TOO_guboat_pass && triggerActivated TOO_samsite_pass && triggerActivated PilotExtracted && triggerActivated POWExtracted) then {
+		if (triggerActivated generaldead && triggerActivated ptboatdead && triggerActivated OPT_all_pass_tgr) then {
 			//[Marcinko, ["10", 100]] remoteExec ["say3D"]; //plays sound file 10
 			[Marcinko, "You took out that filthy commie rat bastard son of a bitch! You destroyed all evidence of our involvement! You must have taken out every target of opportunity in the entire AO! You disrupted enemy operations so badly that they'll be reeling for months. You've all earned the title of true warriors! You're gonna be banging boom-boom girls on R&R till the cows come home! Outstanding job. Dismissed!"] remoteExec ["sideChat"];
 			sleep 10;
@@ -476,7 +484,7 @@ Marcinko addAction [
 			sleep 7;
 			["end1", true , true, true, true] remoteExec ["VN_fnc_endMission"];
 		};
-		if (triggerActivated generaldead && triggerActivated ptboatdead && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotExtracted || triggerActivated POWExtracted)) then {
+		if (triggerActivated generaldead && triggerActivated ptboatdead && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotPassTrigger || triggerActivated POWExtracted)) then {
 			//[Marcinko, ["9", 100]] remoteExec ["say3D"];
 			[Marcinko, "You took out that commie rat bastard and covered our tracks like pros! On top of that, you managed to handle some additional objectives that weren’t even on the list. Outstanding work! Hit the showers, and I’ll catch you guys at the bar later. Dismissed!"] remoteExec ["sideChat"];
 			sleep 10;
@@ -489,7 +497,7 @@ Marcinko addAction [
 			sleep 7;
 			["end1", true , true, true, true] remoteExec ["VN_fnc_endMission"];
 		};
-		if (triggerActivated generaldead && triggerActivated ptboatdead) then {
+		if (triggerActivated generaldead && triggerActivated ptboatdead && !triggerActivated TOO_cache_pass && !triggerActivated TOO_guboat_pass && !triggerActivated TOO_samsite_pass && !triggerActivated PilotPassTrigger && !triggerActivated POWExtracted) then {
             //[Marcinko, ["8", 100]] remoteExec ["say3D"];
 			[Marcinko, "You took out that commie bastard and cleaned up all traces of our involvement. You nailed the primary mission objective, and that’s exactly what we needed. Well done, gentlemen. Your country owes you a great deal. Dismissed!"] remoteExec ["sideChat"];
 			sleep 10;
@@ -502,7 +510,7 @@ Marcinko addAction [
 			sleep 7;
 			["end1", true , true, true, true] remoteExec ["VN_fnc_endMission"];
 		};
-		if (triggerActivated generaldead && triggerActivated STABfail && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotExtracted || triggerActivated POWExtracted)) then {
+		if (triggerActivated generaldead && triggerActivated STABfail && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotPassTrigger || triggerActivated POWExtracted)) then {
 			//[Marcinko, ["7", 100]] remoteExec ["say3D"];
 			[Marcinko, "You took out the bastard, and you did a solid job disrupting their operations by hitting some additional targets. However, leaving evidence of our involvement is a serious breach. It’s unacceptable, but I’ll see if I can work some magic with the top brass, considering the extra effort you put in. Dismissed!"] remoteExec ["sideChat"];
 			sleep 10;
@@ -528,7 +536,7 @@ Marcinko addAction [
 			sleep 7;
 			["end1", true , true, true, true] remoteExec ["VN_fnc_endMission"];
 		};
-		if (triggerActivated end_task_2_fail && triggerActivated ptboatdead && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotExtracted || triggerActivated POWExtracted)) then {
+		if (triggerActivated end_task_2_fail && triggerActivated ptboatdead && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotPassTrigger || triggerActivated POWExtracted)) then {
 			//[Marcinko, ["5", 100]] remoteExec ["say3D"];
 			[Marcinko, "I'm sorry you couldn't nail the slippery bastard, but you did a solid job covering our tracks—textbook work. On the bright side, you managed to disrupt enemy operations by hitting some additional targets, and that’s not going unnoticed. Good effort. Dismissed!"] remoteExec ["sideChat"];
 			sleep 10;
@@ -554,7 +562,7 @@ Marcinko addAction [
 			sleep 7;
 			["end1", true , true, true, true] remoteExec ["VN_fnc_endMission"];
 		};
-		if (triggerActivated end_task_2_fail && triggerActivated STABfail && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotExtracted || triggerActivated POWExtracted)) then {
+		if (triggerActivated end_task_2_fail && triggerActivated STABfail && (triggerActivated TOO_cache_pass || triggerActivated TOO_guboat_pass || triggerActivated TOO_samsite_pass || triggerActivated PilotPassTrigger || triggerActivated POWExtracted)) then {
 			//[Marcinko, ["3", 100]] remoteExec ["say3D"];
 			[Marcinko, "It’s regrettable you missed the target, and worse, you left evidence of our involvement. What am I supposed to tell the top brass? The only small consolation is that you did manage to disrupt enemy operations. Get your shit squared away. Dismissed!"] remoteExec ["sideChat"];
 			sleep 10;

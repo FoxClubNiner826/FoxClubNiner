@@ -14,10 +14,11 @@ ActionEndMission = false;
 
 missionNamespace setVariable ["ActionDebrief", false, true];
 
+//Updates rescue pilot markers on the map. runs on server for performance.
 [] spawn {
     private _offset = [(sin(random 360) * random 100), (cos(random 360) * random 100), 0];
     while {true} do {
-        "PilotArea" setMarkerPos (getPos pilot vectorAdd _offset);
+        "PilotArea" setMarkerPos (getPosATL pilot vectorAdd _offset);
         "RescuePilotText" setMarkerPos (markerPos "PilotArea");
         sleep 1;
     };

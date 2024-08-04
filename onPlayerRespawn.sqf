@@ -23,6 +23,32 @@
 	false //show in middle of screen
 ] call BIS_fnc_holdActionAdd;
 
+// calls POW to surface
+player addAction [
+    "<t color='#FFFF00'>Call POW</t>", 
+    { 
+    missionNamespace setVariable ["ActionCallPOW", false, true];
+	[player, "Alright buddy. Come on up."] remoteExec ["sideChat"];
+	sleep 5;
+	[POW, "Be right there."] remoteExec ["sideChat"];
+	sleep 5;
+	POW setPosATL (getPosATL ExitSpot);
+	sleep 1;
+	[POW] join (group player);
+	sleep 1; //needed for setcaptive
+	POW setCaptive false;
+	POW enableai "PATH";
+	sleep 2;
+	[POW, "Lead the way boss."] remoteExec ["sideChat"];
+    }, 
+    nil, 
+    8, 
+    false, 
+    true, 
+    "", 
+    "_this distance fieldtelephone < 4 && ActionCallPOW && alive pow"
+];
+
 //extract action
 player addAction [
     "<t color='#FFFF00'>Radio for Extraction</t>", 
@@ -43,7 +69,29 @@ player addAction [
     "ExtractAction"
 ];
 
-//bomb for weapon cache
+// confirm smoke convo
+player addAction [
+    "<t color='#FFFF00'>Confirm Smoke Color</t>", 
+    { 
+    missionNamespace setVariable ["ActionConfirmSmoke", false, true];
+	[player, "Rankin, Ranger. Affirmative, you are cleared for touchdown. Over."] remoteExec ["sideChat"];
+	sleep 5;
+	[Ranger, "Ranger, Rankin. Copy. Let's do this one quick-like. Over."] remoteExec ["sideChat"];
+    }, 
+    nil, 
+    8, 
+    false, 
+    true, 
+    "", 
+    "ActionConfirmSmoke"
+];
+
+
+//bomb for weapon cache. Although normally you dont want non player object addactions here in OPR, this is needed because if a player uses the hold action
+//it is removed from their action menu. If they die it will remember they used the hold action and wouldnt be able to use it again. Changing the remove
+//action to repeat wont work cause there is an addaction nested in the hold action and they could repeatedly add the addaction to the obhect. Thus if we 
+//place the hold action in OPR then the player will get the option to use it again regardless of death. And because of the remove action command in init
+//duplicates of the hold action wont be a problem.
 if (!isNil "weaponcache") then {
 [
 	weaponcache,
