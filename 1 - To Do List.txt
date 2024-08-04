@@ -1,24 +1,24 @@
 PRIORITY: FINISH THE MAIN QUEST!
+make sound file smaller and try it that way. will have to adjust time in sqfs
 
 TO DO UP NEXT:
-briefing trigger need some work since they fire 2 at the same time
+briefing triggers need some work since they fire 2 AARs at the same time
 if you throw a smoke before lz task pops up then it wont complete and no inf smoke
 using get in from within the heli causes it to hover
-make sound file smaller and try it that way. will have to adjust time in sqfs
-end mission page to tell players why they died.
+end mission page to tell players why they died or succeded
 mission fail for leaving a player behind
 what to do with pilot or hostage on base return. currently they stay in chopper
 
 TO DO AT SOME POINT:
+- have npc walk to end of pier and salute as boat drives away.
 randomize cloud cover at mission start
 convert lumphat files to hold actions
 disable the radio after testing because it does help during that.
 BIS_fnc_ambientAnimCombat and another function that does idle stuff in start area.
 how to set server distance view
-add questions for lt rankin at beginning
+record voice actors
 update briefing pics
-add AAR for lt. rankin (just need to record lines)
-have a trigger check for group size and change helicopter to fit size
+write complete script
 
 BUGS:
 - Fog never clearing up because forgot to script it that way.
@@ -40,6 +40,17 @@ so because this doesnt happen with the POW
 
 BEFORE PUBLISH:
 read description.ext on wiki to polish load screens, etc
+- add mission steam main pic (can be any size but must be square. set 1440x1440 in gimp. use square overlay in splendid camera.)
+- two more screen shots. approching village and sinlge file jumngle walk space 10 meters apart.
+- add autosaves for SP
+
+TO EXPORT FOR PLAY (not testing):
+Change time to night
+adjust respawn settings (on custom position and choose the spawn 60secs1)
+enable intro in init.sqf
+make sure player groups call sign is seal team one and all at the start area
+enable damage for command and scout unit
+move pics and sound files back
 
 FINISHED:
 -JIP intro type text
@@ -78,14 +89,5 @@ FINISHED:
 - moved time bombs to IPL
 - adjusted skipwaypoint for troop reinforcements after general is killed.
 - updates file in lumphat so they dont clip thorugh objects.
-
-
-TO EXPORT FOR PLAY (not testing):
-Change time to night
-adjust respawn settings (on custom position and choose the spawn 60secs1)
-enable intro in init.sqf
-make sure player groups call sign is seal team one and all at the start area
-enable damage for command and scout unit
-move pics and sound files back
 
 
