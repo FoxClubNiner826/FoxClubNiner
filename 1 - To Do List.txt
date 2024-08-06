@@ -1,17 +1,15 @@
 PRIORITY: FINISH THE MAIN QUEST!
-- make sound file smaller and try it that way. will have to adjust time in sqfs
-
+cant access arsenal with olh action done?
 TO DO UP NEXT:
-- briefing triggers need some work since they fire 2 AARs at the same time
-- if you throw a smoke before lz task pops up then it wont complete and no inf smoke
-- using get in from within the heli causes it to hover
-- end mission page to tell players why they died or succeded
-- mission fail for leaving a player behind (place a trigger area for the helicopter with condtion !triggeractivated mission complete. since that trigger 
-didnt fire the only reason is someone wasnt in the helicopter) you could end the mission right there or just set task task to fail. in which case you need 
-to adjust pri obj pass annd fail condtion.
-- what to do with pilot or hostage on base return. currently they stay in chopper
 
 TO DO AT SOME POINT:
+- mission fail if friendly fire
+- adjust extract heli height cause its glitching
+- what to do with pilot or hostage on base return. currently they stay in chopper
+- see if smoke can be detected in area marker instead of player
+- end mission page to tell players why they died or succeded
+- add game master slot
+- condition for stab place bomb for players to be outside
 - have npc walk to end of pier and salute as boat drives away.
 - randomize cloud cover at mission start
 - convert lumphat files to hold actions
@@ -30,7 +28,8 @@ BUGS:
 - couldn't get in boat until other players exited
 - missile wont down pilot
 - players dont always end up in boat with skip to ingress
-- if hvt fail have hq radio players saying they monitor radio traffic and the chicken has 	flown the coup. "see if you can find anything in lumphat at your discretion"
+- if hvt fail have hq radio players saying they monitor radio traffic and the chicken has 	flown the coup. "see if you can find anything in lumphat at 
+your discretion"
 - search lumphat optional task doesn't complete
 - disable jukebox by looking at the module code in function viewer
 
@@ -38,7 +37,8 @@ JIP ISSUES:
 - if a player leaves and he had an ai in his group then no one else can control the AI. The AI becomes invincible. maybe the enable damage reverts? I think
 so because this doesnt happen with the POW
 - player may not have access to their loadout from the stab if they have scuba equipped and leave and rejoin.
-- some combination of JIP players coming and going cause some tasks to cycle through when a player joins. Does not seem to affect the sync of the tasks though.
+- some combination of JIP players coming and going cause some tasks to cycle through when a player joins. Does not seem to affect the sync of the tasks 
+though.
 - If a player leaves and his AI is killed its loadout reverts. Face still working tho.
 
 BEFORE PUBLISH:
@@ -92,5 +92,6 @@ FINISHED:
 - moved time bombs to IPL
 - adjusted skipwaypoint for troop reinforcements after general is killed.
 - updates file in lumphat so they dont clip thorugh objects.
-
-
+- placed optional tasks on bottom
+- added fail task state for extract task and update PRI and SEC main tasks to reflect it
+- adjusted size of mask area for smoke lz task so it fires if players arent exaclty on the right spot. gives more leeway

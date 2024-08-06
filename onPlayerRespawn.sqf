@@ -5,13 +5,12 @@
 	"<t color='#FFFF00'>Radio Headquarters</t>",
 	"a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa", //idle icon 
 	"a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa", //progress icon
-	"isNil 'GlobalRadioHQ' && triggerActivated wait_task;", //condition
+	"ActionCallHQ", //condition
 	"true", //condition progress
 	{}, //code on start
 	{}, // code every tick
 	{
-		GlobalRadioHQ = false; 
-		publicVariable "GlobalRadioHQ"; 
+		missionNamespace setVariable ["ActionCallHQ", false, true];  
 		["scripts\RadioHQ.sqf"] remoteExec ["execVM", 0];
 	}, // code on finish
 	{}, // code on interuption

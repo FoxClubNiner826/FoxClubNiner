@@ -1,4 +1,4 @@
-/*
+
 if (hasInterface && !(missionNamespace getVariable ["MissionIntro", false])) then {
  0 fadeSound 0; //starts with sound off
 cuttext ["", "BLACK FADED", 60]; //starts with black screen
@@ -16,7 +16,7 @@ sleep 1; //let sound fade in all the way before typetext
 sleep 17; //pause to finish message while screen is black
 cuttext ["", "BLACK IN", 5]; //fades in from black
 };
-*/
+
 
 /*
 override_vn_sam_masteraudioarray = compile preprocessFileLineNumbers "override_vn_sam_masteraudioarray.sqf";
@@ -28,10 +28,8 @@ override_vn_sam_masteraudioarray = compile preprocessFileLineNumbers "override_v
 [] call override_vn_sam_masteraudioarray;
 */
 
-//[] call VN_fnc_QOL_earplugs;
-
-//enableRadio false; //try these later
-//enableSentences false; 
+//enableRadio false; //disables side caht too. dont use
+enableSentences false; //turns over audio but you can still see it in systemchat log
 [] call VN_fnc_QOL_earplugs;
 
 // removes addaction from dead bodies. this makes sure there are no duplicate addactions on players too

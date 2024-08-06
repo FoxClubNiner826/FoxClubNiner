@@ -46,7 +46,7 @@ player createDiaryRecord ["Diary",["Intelligence",
 <font color='#FFFF00'>Civilian Presence:</font> Highly Likely.<br/>
 <font color='#FFFF00'>ROE:</font> Weapons Free but being covert will increase odds of mission success.<br/> 
 <font color='#FFFF00'>TOO:</font> Complete optional objectives at your discretion but it is mission critical to kill the HVT.<br/>
-<font color='#FFFF00'>Weather Forecast:</font> Clear overnight with fog and light rain into dawn, leading to clear skies by midday.<br/>
+<font color='#FFFF00'>Weather Forecast:</font> Fog and light rain at dawn, leading to clear skies by midday. High of 85°F and low of 75°F.<br/>
 <font color='#FFFF00'>Armament:</font> Navy SEAL loadout. Recommend suppressed small arms.<br/> 
 <font color='#FFFF00'>Supplies in STAB:</font> SCUBA gear, explosive satchels, and whatever you want to put in there.<br/>
 <font color='#FFFF00'>HVT:</font> NVA General. Seen in photos wearing a green uniform, soft cover, bandana and pistol holster.<br/><br/>
